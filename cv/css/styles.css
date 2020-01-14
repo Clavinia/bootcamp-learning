@@ -1,0 +1,67 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Pacifico&display=swap');
+/*
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Montserrat', sans-serif;
+*/
+
+:root {
+  --color-darkest: #333;
+  --color-darker: #39375b;
+  --color-medium: #745c97;
+  --color-lighter: #d597ce;
+  --color-lightest: rgba(255,255,255,.9);
+  --color-contrast: #ffba5a;
+  --color-contrast-2: #52de97;
+  --font-base: 'Raleway', sans-serif;
+  --font-titles: 'Pacifico', cursive;
+  --origin-font-size: 95%;
+}
+
+body {
+  background: var(--color-darker);
+  color: var(--color-lightest);
+  font-family: var(--font-base);
+  font-size: var(--origin-font-size);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titles);
+  margin: 0;
+  font-weight: normal;
+}
+
+.logoBox {
+  margin: 30vh auto;
+  max-width: 50%;
+  text-align: center;
+  color: var(--color-contrast-2);
+}
+
+.logoBox h1 {
+  font-size: 2.4em;
+}
+.box {
+  height: 200px;
+  width: 200px;
+  background: white;
+}
+
+.box:first-of-type {
+ border: 10px solid black;
+ padding: 20px;
+}
+.box:nth-of-type(2) {
+ border: 20px solid black;
+ background: red;
+ margin-left: 260px;
+}
+.box:nth-of-type(3) {
+ border: 10px solid black;
+ background: yellow;
+ margin-left: 500px;
+}
