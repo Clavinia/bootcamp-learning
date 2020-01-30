@@ -171,6 +171,10 @@ a {
   width: 100%;
 }
 
+#title {
+  background-color: #ff4c68;
+}
+
 /* Breakpoints */
 /* Desktop */
 @media (max-width: 1440px) {
