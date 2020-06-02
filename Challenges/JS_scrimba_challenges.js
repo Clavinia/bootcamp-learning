@@ -1,3 +1,37 @@
+// Add two digits
+function addTwoDigits(num)  {
+    let digits = num.toString();
+    let digitsArray = digits.split('');
+    let count = 0;
+    for (i = 0; i < digitsArray.length; i++) {
+        let digitValue = parseInt(digitsArray[i],10);
+        count += digitValue;
+    }
+    return count;
+}
+
+
+
+/**
+* Test Suite 
+*/
+describe('addBorder()', () => {
+    it('take a two digit number and return the sum of their numbers', () => {
+       // arrange
+        const num = 29;
+        
+        // act
+        const result = addTwoDigits(num);
+
+        // log
+        console.log("result: ", result);
+        
+        // assert
+        expect(result).toBe(11);
+    });
+});
+
+
 
 // Add border
 
