@@ -1,13 +1,24 @@
 // Add two digits
+
 function addTwoDigits(num)  {
     let digits = num.toString();
     let digitsArray = digits.split('');
+    
+    //with a for loop
     let count = 0;
     for (i = 0; i < digitsArray.length; i++) {
-        let digitValue = parseInt(digitsArray[i],10);
-        count += digitValue;
+        //parse int to array
+        digitsArray[i] = parseInt(digitsArray[i],10);
+        //count version 1
+        count += digitsArray[i];
     }
-    return count;
+       
+    //with reduce
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    let result = digitsArray.reduce(reducer);
+    
+    return result;
+    
 }
 
 
