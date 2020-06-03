@@ -1,3 +1,75 @@
+// Find first duplicate
+
+function firstDuplicate(nums) {
+    //  write code here.
+    let duplicate = -1;
+    let arrayObject = {};
+    let comparingArray = [];
+    
+    /* Done with what I thought of */
+    for (i = 0; i < nums.length; i++) {
+        if (comparingArray.includes(nums[i])) {
+            duplicate = nums[i];
+            break;
+        }
+        else {
+            comparingArray.push(nums[i]);
+        }
+    }
+    
+    /* Done with hasOwnProperty */
+    /*
+    for (i = 0; i < nums.length; i++) {
+        if (arrayObject.hasOwnProperty( nums[i] )) {
+            duplicate = nums[i];
+            break;
+        }
+        else { 
+            arrayObject = {
+               [nums[i]] : "hello",
+            }
+        }
+    }
+    */
+    return duplicate;
+}
+
+
+
+/**
+* Test Suite 
+*/
+describe('firstDuplicate()', () => {
+    it('returns first duplicated value', () => {
+        // arrange
+        const nums = [2, 1, 3, 5, 3, 2];
+        
+        // act
+        const result = firstDuplicate(nums);
+
+        // log
+        console.log("result 1: ", result);
+        
+        // assert
+        expect(result).toBe(3);
+    });
+    
+    it('returns -1 when no duplicated values', () => {
+        // arrange
+        const nums = [2, 1, 3, 5, 4, 6];
+        
+        // act
+        const result = firstDuplicate(nums);
+
+        // log
+        console.log("result 2: ", result);
+        
+        // assert
+        expect(result).toBe(-1);
+    });
+});
+
+
 // Add two digits
 
 function addTwoDigits(num)  {
