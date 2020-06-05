@@ -1,3 +1,86 @@
+// Sum all primes
+
+function sumAllPrimes(num) {
+    
+    let primesSum = 0;
+    
+    function isPrime(num) {
+        let isPrime = true;
+        for(var i = 2; i < num; i++) {
+            if ( num % i === 0 ) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;
+    }
+    
+    for(var i = 2; i <= num; i++) {
+            if(isPrime(i)) {
+                primesSum += i;
+            }
+        }
+    
+    return primesSum;
+    
+    
+    
+    /* First try */
+    /*
+    let counter = 0;
+    let primeSum = 0;
+    let currentNumber;
+    let primesArray = [];
+    let countArray = [];
+    
+    for(i = 2; i <= num; i++) {
+        countArray.push(i);
+    }
+    
+    for (i = 0; i < countArray.length; i++) {
+        let divisorsArray = [];
+        currentNum = countArray[i];     
+        countArray.forEach(
+            function(val,i) {
+                if (val < currentNum ) {
+                    if( (currentNum % val) === 0) {
+                        divisorsArray.push(val);
+                    }
+                }
+            }
+        );       
+        if ( divisorsArray.length === 0) {
+            primesArray.push(currentNum);
+            primeSum += currentNum;
+        }
+    }
+    
+    return primeSum;
+    */
+}
+
+
+
+/**
+* Test Suite 
+*/
+describe('sumAllPrimes()', () => {
+    it('adds all prime numbers up to input number', () => {
+        // arrange
+        const num = 10;
+        
+        // act
+        const result = sumAllPrimes(num);
+
+        // log
+        console.log("result: ", result);
+        
+        // assert
+        expect(result).toBe(17);
+    })
+});
+
+
 // Find first duplicate
 
 function firstDuplicate(nums) {
