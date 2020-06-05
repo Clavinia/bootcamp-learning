@@ -1,18 +1,16 @@
 
-// Is every digit even?
-
 function evenDigitsOnly(number) {
     //  write code here.
     let stringNumber = number.toString();
     let digitsArray = stringNumber.split("");
-    digitsArray.forEach( function(val) {
-        parseInt(val,10);
+    digitsArray.forEach( function(val,i) {
+       digitsArray[i] = parseInt(val,10);
     });
     
     function isEven(a) {
         return ( a % 2 === 0 );
     }
-    
+   
     return digitsArray.every(isEven);
      
 }
@@ -51,6 +49,7 @@ describe('evenDigitsOnly()', () => {
         expect(result).toBe(false);
     });
 });
+
 
 
 // Sum all primes
