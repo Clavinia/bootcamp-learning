@@ -1,3 +1,40 @@
+function makeArrayConsecutive(nums) {
+    //  write code here.
+    nums.sort( function(a,b) {
+        return a - b;
+    });
+    //let missingNums = [];
+    let missingNumsCounter = 0;
+    for (var i = nums[0]; i < nums[nums.length - 1] ; i ++ ) {
+        if (nums.indexOf(i) === -1 ) {
+            //missingNums.push(i);
+            missingNumsCounter ++;
+        }
+    }
+    return missingNumsCounter;
+}
+
+
+
+/**
+* Test Suite 
+*/
+describe('makeArrayConsecutive()', () => {
+    it('returns total missing numbers between smallest and largest number', () => {
+        // arrange
+        const nums = [6, 2, 3, 8];
+        
+        // act
+        const result = makeArrayConsecutive(nums);
+
+        // log
+        console.log("result: ", result);
+        
+        // assert
+        expect(result).toBe(3);
+    })
+});
+
 
 function evenDigitsOnly(number) {
     //  write code here.
